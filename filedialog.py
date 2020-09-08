@@ -1,14 +1,20 @@
 from tkinter import *
 from tkinter import filedialog
+import openpyxl
 
 def Load():
     filename = filedialog.askopenfilename(initialdir="/", title="Select file",
-                                          filetypes=(("PPTX files", "*.pptx"), ("all files", "*.*")))
+                                          filetypes=(("Excel files", "*.xlsx"), ("all files", "*.*")))
     print(filename)
+    wb = openpyxl.load_workbook(filename)
+    sheet = wb.active
+    sheet.title = "test"
+    wb.save(filename)
+
 
 def Save():
     filename = filedialog.asksaveasfilename(initialdir="/", title="Select file",
-                                          filetypes=(("PPTX files", "*.pptx"), ("all files", "*.*")))
+                                          filetypes=(("Excel files", "*.xlsx"), ("all files", "*.*")))
     print(filename)
 
 def domenu():
