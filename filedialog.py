@@ -3,7 +3,7 @@ from tkinter import filedialog
 import openpyxl
 
 def Load():
-    filename = filedialog.askopenfilename(initialdir="/", title="Select file",
+    filename = filedialog.askopenfilename(initialdir="/", title="파일을 선택하세요",
                                           filetypes=(("Excel files", "*.xlsx"), ("all files", "*.*")))
     print(filename)
     wb = openpyxl.load_workbook(filename)
