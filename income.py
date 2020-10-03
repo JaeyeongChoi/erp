@@ -1,8 +1,8 @@
 import openpyxl
 
 def income(filename, filename2):
-#    filename = "aa.xlsx"
-#    filename2 = "bb.xlsx"
+    #    filename = "aa.xlsx"
+    #    filename2 = "bb.xlsx"
     wb = openpyxl.load_workbook(filename)
     wb2 = openpyxl.load_workbook(filename2)
     sheet = wb["Sheet1"]
@@ -17,6 +17,16 @@ def income(filename, filename2):
 
     wb.save(filename)
     wb2.save(filename2)
+
+
+def excelcopy(sheet1, sheet2, type):
+
+    if(type == 1):
+        sheet1.cell(1,1).value = "test"
+
+
+
+
 
 
 filename = "aa.xlsx"
